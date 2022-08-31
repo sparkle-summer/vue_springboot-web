@@ -67,3 +67,11 @@ https://www.ydyno.com/archives/1219.html
 #### 反馈交流
 
 - QQ交流群：一群：891137268、二群：947578238、三群：659622532
+
+#### 整合后下载链接
+
+- 自己的GitHub上下载，默认分支为master分支，且为原版本；其中main分支为当前开发优化中的版本，
+
+|     |   后端源码  |   前端源码  |
+|---  |--- | --- |
+|  github   |  https://github.com/sparkle-summer/vue_springboot-backend.git   |  https://github.com/sparkle-summer/vue_springboot-web.git   |
