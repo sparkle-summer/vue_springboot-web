@@ -74,4 +74,9 @@ https://www.ydyno.com/archives/1219.html
 
 |     |   后端源码  |   前端源码  |
 |---  |--- | --- |
-|  github   |  https://github.com/sparkle-summer/vue_springboot-backend.git   |  https://github.com/sparkle-summer/vue_springboot-web.git   |
+|  github   |  <https://github.com/sparkle-summer/vue_springboot-backend.git>   |  <https://github.com/sparkle-summer/vue_springboot-web.git>   |
+
+#### 前端登录访问地址记密码
+
+- 登录地址：<http://localhost:8013/> 或<http://IP:8013/>
+- 登录密码：admin/123456

@@ -55,18 +55,18 @@
 
 <script>
 import { del } from '@/api/monitor/online'
-import CRUD, { presenter, header, crud } from '@crud/crud'
-import rrOperation from '@crud/RR.operation'
-import crudOperation from '@crud/CRUD.operation'
-import pagination from '@crud/Pagination'
+import CRUD, { presenter, header, crud } from '@crud/crud' // js封装整体详细接口组件
+import rrOperation from '@crud/RR.operation' // 查询页面组件
+import crudOperation from '@crud/CRUD.operation' // 增删改查页面组件
+import pagination from '@crud/Pagination' // 分页组件
 
 export default {
   name: 'OnlineUser',
-  components: { pagination, crudOperation, rrOperation },
+  components: { pagination, crudOperation, rrOperation }, // 将引入的页面封装为当前页面的组件标签
   cruds() {
-    return CRUD({ url: 'auth/online', title: '在线用户' })
+    return CRUD({ url: 'auth/online', title: '在线用户' }) // 重置显示页面
   },
-  mixins: [presenter(), header(), crud()],
+  mixins: [presenter(), header(), crud()], // 将引入的方法混入合并，mixins是一种分发Vue组件中可复用功能的一种灵活方式
   data() {
     return {
       delLoading: false,

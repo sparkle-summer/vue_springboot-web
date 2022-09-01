@@ -64,10 +64,26 @@ export function validEmail(email) {
   return reg.test(email)
 }
 
+/**
+ * 验证手机号，自带方式
+ * @param {*} phone 
+ * @returns 
+ */
 export function isvalidPhone(phone) {
   const reg = /^1([38][0-9]|4[014-9]|[59][0-35-9]|6[2567]|7[0-8])\d{8}$/
   return reg.test(phone)
 }
+
+/**
+ * 手机号验证方式二
+ * @param {*} phone 
+ * @returns 
+ */
+export function isvalidPhone2(phone) {
+  const reg = /^1[3|4|5|6|7|8][0-9]\d{8}$/
+  return reg.test(phone)
+}
+
 
 /**
  * @param {string} str

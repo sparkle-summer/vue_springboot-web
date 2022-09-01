@@ -17,7 +17,8 @@ module.exports = {
   publicPath: '/',
   outputDir: 'dist',
   assetsDir: 'static',
-  lintOnSave: process.env.NODE_ENV === 'development',
+  // lintOnSave: process.env.NODE_ENV === 'development', // 用于开启检测ESLint规则校验
+  lintOnSave: false,
   productionSourceMap: false,
   devServer: {
     port: port,
@@ -40,7 +41,14 @@ module.exports = {
         pathRewrite: {
           '^/auth': 'auth'
         }
-      }
+      },
+      // '/fw': {
+      //   target: process.env.VUE_APP_BASE_API,
+      //   changeOrigin: true,
+      //   pathRewrite: {
+      //     '^/fw': 'fw'
+      //   }
+      // },
     }
   },
   configureWebpack: {

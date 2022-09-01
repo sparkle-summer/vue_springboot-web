@@ -855,6 +855,7 @@ CRUD.NOTIFICATION_TYPE = {
 
 export default CRUD
 
+/** presenter // 主界面; header, //表单头; form, // 表单; pagination, // 分页; crud  // 全局引入*/
 export {
   presenter,
   header,
