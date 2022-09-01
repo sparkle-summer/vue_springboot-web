@@ -100,7 +100,8 @@
         <img :src="qrCodeImg" alt="暂无图片" style="cursor: pointer" />
       </el-carousel>
     </el-dialog>
-    <div class="login-code">
+    <!-- 测试 -->
+    <div class="login-code" style="align:left">
       <img :src="codeUrl" @click="getCode">
     </div>
 
@@ -216,21 +217,17 @@ export default {
       console.log("formData",formData);
 
       // 确认弹窗提示
-      this.$confirm('生成二维码此操作将 ' + formData + ', 是否继续？', '提示', {
+      this.$confirm('请确认信息是否正确,是否继续？', '提示', {
         confirmButtonText: '确定',
         cancelButtonText: '取消',
         type: 'warning'
       }).then(() => {
-        this.openFullScreen()
+        // this.openFullScreen()
         if(this.qrParams.qrLogoFile){// 方法暂时无法实现，使用无图方式
           formData.append("qrLogoFile", this.qrParams.qrLogoFile)
-          this.$notify.info({
-            title: "提示",
-            message: `调用生成带有logo图片的方法`
-          })
-          // 有logo上传
+          // 有logo上传,其中resp根据框架不同返回也不尽相同，具体可以将其打印出来，实际只取blob部分，大致有两类，一类直接返回blob如当前案例，另一类则在响应中封装的data中
           generateQrCodeLogo(formData).then(resp =>{
-            const blob=new Blob([resp.data],{
+            const blob=new Blob([resp],{
               type: 'application/png;charset=utf-8'
             })
             const url=window.URL.createObjectURL(blob)
@@ -240,17 +237,11 @@ export default {
             console.log("error",error)
           })
 
-        }else{
-          this.$notify.info({
-            title: "提示",
-            message: `调用生成无logo图片的方法`+this.qrParams
-          })
-          // 无logo图片上传,json方式传输参数
-          console.log("param", this.qrParams)
+        }else{ // 无logo图片上传,json方式传输参数
           generateQrCodeDto(this.qrParams).then(resp =>{
           // generateQrCodeReq(this.qrParams).then(resp =>{
             console.log('resp',resp);
-            const blob=new Blob([resp.data],{
+            const blob=new Blob([resp],{
               type: 'application/png;charset=utf-8'
             })
             const url=window.URL.createObjectURL(blob)
@@ -261,13 +252,13 @@ export default {
             console.log("error",error)
           })
         }
+        // 调用方法
+        // this.loading.close()
+        this.fileList=[]
+        this.qrParams.qrLogoFile=''
       }).catch((error) => {
         console.log(error);
       })
-      
-      // 调用方法
-      this.fileList=[]
-      this.qrParams.qrLogoFile=''
     },
 
     // 全屏加载遮罩
