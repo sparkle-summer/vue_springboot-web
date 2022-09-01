@@ -5,7 +5,7 @@
  */
 
  import request from '@/utils/request'
- // 工行新内管api配置方式
+ // 某行新内管api配置方式
  // let qrCodeAPI={}
  
  // /**
