@@ -37,16 +37,20 @@
                 v-model="qrParams.prodType"
                 size="small"
                 clearable
+                filterable
                 placeholder="类型"
                 class="filter-item"
-                style="width: 90px"
+                style="width: 210px"
               >
                 <el-option
                   v-for="dict in optionProdType"
                   :key="dict.value"
                   :label="dict.label"
                   :value="dict.value"
-                />
+                >
+                  <span style="float: left">{{ dict.label }}</span>
+                  <span style="float: right; color: #8492a6; font-size: 13px">{{ dict.value }}</span>
+                </el-option>
               </el-select>
             </el-form-item>
 
