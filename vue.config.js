@@ -12,9 +12,9 @@ const port = 8013 // 端口配置
 
 // All configuration item explanations can be find in https://cli.vuejs.org/config/
 module.exports = {
-  // hash 模式下可使用
-  // publicPath: process.env.NODE_ENV === 'development' ? '/' : './',
-  publicPath: '/',
+  // hash 模式下可使用,加上./主要是预防打包后出现白屏的情况
+  publicPath: process.env.NODE_ENV === 'development' ? '/' : './',
+  // publicPath: '/',
   outputDir: 'dist',
   assetsDir: 'static',
   // lintOnSave: process.env.NODE_ENV === 'development', // 用于开启检测ESLint规则校验

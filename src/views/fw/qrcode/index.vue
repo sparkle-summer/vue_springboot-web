@@ -81,6 +81,8 @@
                   :on-error="handleError"
                   :file-list="fileList"
                   class="upload-demo"
+                  list-type="picture"
+                  style="width:400px"
                 >
                   <el-button size="small" type="success" plain style="width: 110px">个性logo选择</el-button>
                   <div slot="tip" class="el-upload__tip">
@@ -358,6 +360,7 @@ export default {
       this.fileList = []
       this.qrParams.qrLogoFile = ''
     }
+
     // --------↑↑↑↑↑↑↑logo图片上传处理逻辑↑↑↑↑↑↑↑------------
   }
 }

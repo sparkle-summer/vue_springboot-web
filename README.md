@@ -6,13 +6,15 @@ ELADMIN 前端源码
 
 |     |   后端源码  |   前端源码  |
 |---  |--- | --- |
-|  github   |  https://github.com/elunez/eladmin   |  https://github.com/elunez/eladmin-web   |
-|  码云   |  https://gitee.com/elunez/eladmin   |  https://gitee.com/elunez/eladmin-web   |
+|  github   |  <https://github.com/elunez/eladmin>   |  <https://github.com/elunez/eladmin-web>   |
+|  码云   |  <https://gitee.com/elunez/eladmin>   |  <https://gitee.com/elunez/eladmin-web>   |
 
 #### 开发文档
+
 [https://eladmin.vip](https://eladmin.vip)
 
 #### 体验地址
+
 [https://eladmin.vip/demo](https://eladmin.vip/demo)
 
 #### 前端模板
@@ -22,6 +24,7 @@ ELADMIN 前端源码
 模板文档： [https://panjiachen.github.io/vue-element-admin-site/zh/guide/](https://panjiachen.github.io/vue-element-admin-site/zh/guide/)
 
 #### Build Setup
+
 ``` bash
 # 配置镜像加速
 https://www.ydyno.com/archives/1219.html
@@ -32,6 +35,9 @@ npm install
 # 启动服务 localhost:8013
 npm run dev
 
+# 构建UAT环境
+npm run build:uat
+
 # 构建生产环境
 npm run build:prod
 ```
@@ -41,6 +47,7 @@ npm run build:prod
 1、linux 系统在安装依赖的时候会出现 node-sass 无法安装的问题
 
 解决方案：
+
 ```
 1. 单独安装：npm install --unsafe-perm node-sass 
 2. 直接使用：npm install --unsafe-perm
@@ -48,7 +55,7 @@ npm run build:prod
 
 2、加速node-sass安装
 
-https://www.ydyno.com/archives/1219.html
+<https://www.ydyno.com/archives/1219.html>
 
 #### 特别鸣谢
 
@@ -85,3 +92,9 @@ https://www.ydyno.com/archives/1219.html
 
 - 1.前端开发框架中默认请求转发的包含有两类，分别为以【/api】开头、【/auth】开头的请求进行代理重定向分发响应后端服务
 - 2.如需要授权控制访问则需要在请求头中添加header，并将授权token传给后端，否则会报错未授权不可访问
+
+### 引入微信端开发
+
+```
+npm install weixin-js-sdk -S
+```
